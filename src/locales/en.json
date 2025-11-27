@@ -1,0 +1,99 @@
+{
+  "common": {
+    "appName": "Enterprise App",
+    "loading": "Loading...",
+    "error": "Error",
+    "success": "Success",
+    "cancel": "Cancel",
+    "save": "Save",
+    "delete": "Delete",
+    "edit": "Edit",
+    "close": "Close",
+    "submit": "Submit",
+    "search": "Search",
+    "filter": "Filter",
+    "actions": "Actions",
+    "showing": "Showing",
+    "previous": "Previous",
+    "next": "Next"
+  },
+  "auth": {
+    "login": "Sign In",
+    "logout": "Logout",
+    "register": "Sign Up",
+    "email": "Email",
+    "password": "Password",
+    "confirmPassword": "Confirm Password",
+    "name": "Name",
+    "forgotPassword": "Forgot Password?",
+    "dontHaveAccount": "Don't have an account? Sign up",
+    "alreadyHaveAccount": "Already have an account? Sign in",
+    "loginFailed": "Login failed. Please try again.",
+    "invalidEmail": "Invalid email",
+    "emailRequired": "Email is required",
+    "passwordRequired": "Password is required",
+    "passwordMinLength": "Password must be at least 6 characters",
+    "nameRequired": "Name is required"
+  },
+  "navigation": {
+    "dashboard": "Dashboard",
+    "profile": "Profile",
+    "list": "List",
+    "settings": "Settings"
+  },
+  "dashboard": {
+    "title": "Dashboard",
+    "totalRevenue": "Total Revenue",
+    "users": "Users",
+    "orders": "Orders",
+    "growth": "Growth",
+    "revenueOverview": "Revenue Overview",
+    "monthlySales": "Monthly Sales",
+    "fromLastMonth": "from last month"
+  },
+  "profile": {
+    "title": "Profile",
+    "profileInformation": "Profile Information",
+    "updateProfile": "Update Profile",
+    "name": "Name",
+    "email": "Email"
+  },
+  "list": {
+    "title": "List",
+    "users": "Users",
+    "name": "Name",
+    "email": "Email",
+    "role": "Role",
+    "status": "Status",
+    "active": "Active",
+    "inactive": "Inactive",
+    "searchPlaceholder": "Search..."
+  },
+  "language": {
+    "switchLanguage": "Switch Language",
+    "english": "English",
+    "hindi": "Hindi",
+    "punjabi": "Punjabi"
+  },
+  "errors": {
+    "somethingWentWrong": "Something Went Wrong",
+    "errorDescription": "An unexpected error occurred. Please try again or reload the page.",
+    "undefinedError": "Data Error",
+    "undefinedErrorDescription": "Some data is missing or undefined. This might be a temporary issue.",
+    "errorDetails": "Error Details",
+    "tryAgain": "Try Again",
+    "reloadPage": "Reload Page",
+    "moduleError": "Error in {{module}} Module",
+    "moduleErrorDescription": "This module encountered an error but the rest of the application continues to work.",
+    "reloadModule": "Reload Module",
+    "networkError": "Network Error",
+    "networkErrorDescription": "Unable to connect to the server. Please check your internet connection.",
+    "dataError": "Data Error",
+    "dataErrorDescription": "Unable to load data. Some information may be missing.",
+    "queryError": "Data Loading Error",
+    "queryErrorDescription": "Failed to load data. Please try again.",
+    "retry": "Retry",
+    "componentError": "Error in {{component}} Component",
+    "componentLoadError": "Component failed to load"
+  }
+}

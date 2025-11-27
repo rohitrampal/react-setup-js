@@ -1,0 +1,99 @@
+{
+  "common": {
+    "appName": "ਐਂਟਰਪ੍ਰਾਈਜ਼ ਐਪ",
+    "loading": "ਲੋਡ ਹੋ ਰਿਹਾ ਹੈ...",
+    "error": "ਗਲਤੀ",
+    "success": "ਸਫਲਤਾ",
+    "cancel": "ਰੱਦ ਕਰੋ",
+    "save": "ਸੁਰੱਖਿਅਤ ਕਰੋ",
+    "delete": "ਮਿਟਾਓ",
+    "edit": "ਸੰਪਾਦਨ ਕਰੋ",
+    "close": "ਬੰਦ ਕਰੋ",
+    "submit": "ਜਮ੍ਹਾ ਕਰੋ",
+    "search": "ਖੋਜ",
+    "filter": "ਫਿਲਟਰ",
+    "actions": "ਕਾਰਵਾਈਆਂ",
+    "showing": "ਦਿਖਾ ਰਹੇ ਹਨ",
+    "previous": "ਪਿਛਲਾ",
+    "next": "ਅਗਲਾ"
+  },
+  "auth": {
+    "login": "ਸਾਈਨ ਇਨ",
+    "logout": "ਲਾਗਆਉਟ",
+    "register": "ਸਾਈਨ ਅਪ",
+    "email": "ਈਮੇਲ",
+    "password": "ਪਾਸਵਰਡ",
+    "confirmPassword": "ਪਾਸਵਰਡ ਪੁਸ਼ਟੀ ਕਰੋ",
+    "name": "ਨਾਮ",
+    "forgotPassword": "ਪਾਸਵਰਡ ਭੁੱਲ ਗਏ?",
+    "dontHaveAccount": "ਖਾਤਾ ਨਹੀਂ ਹੈ? ਸਾਈਨ ਅਪ ਕਰੋ",
+    "alreadyHaveAccount": "ਪਹਿਲਾਂ ਤੋਂ ਖਾਤਾ ਹੈ? ਸਾਈਨ ਇਨ ਕਰੋ",
+    "loginFailed": "ਲਾਗਇਨ ਅਸਫਲ। ਕਿਰਪਾ ਕਰਕੇ ਦੁਬਾਰਾ ਕੋਸ਼ਿਸ਼ ਕਰੋ।",
+    "invalidEmail": "ਅਵੈਧ ਈਮੇਲ",
+    "emailRequired": "ਈਮੇਲ ਲੋੜੀਂਦਾ ਹੈ",
+    "passwordRequired": "ਪਾਸਵਰਡ ਲੋੜੀਂਦਾ ਹੈ",
+    "passwordMinLength": "ਪਾਸਵਰਡ ਘੱਟੋ-ਘੱਟ 6 ਅੱਖਰਾਂ ਦਾ ਹੋਣਾ ਚਾਹੀਦਾ ਹੈ",
+    "nameRequired": "ਨਾਮ ਲੋੜੀਂਦਾ ਹੈ"
+  },
+  "navigation": {
+    "dashboard": "ਡੈਸ਼ਬੋਰਡ",
+    "profile": "ਪ੍ਰੋਫਾਈਲ",
+    "list": "ਸੂਚੀ",
+    "settings": "ਸੈਟਿੰਗਾਂ"
+  },
+  "dashboard": {
+    "title": "ਡੈਸ਼ਬੋਰਡ",
+    "totalRevenue": "ਕੁੱਲ ਆਮਦਨੀ",
+    "users": "ਯੂਜ਼ਰ",
+    "orders": "ਆਰਡਰ",
+    "growth": "ਵਿਕਾਸ",
+    "revenueOverview": "ਆਮਦਨੀ ਸੰਖੇਪ",
+    "monthlySales": "ਮਹੀਨਾਵਾਰ ਵਿਕਰੀ",
+    "fromLastMonth": "ਪਿਛਲੇ ਮਹੀਨੇ ਤੋਂ"
+  },
+  "profile": {
+    "title": "ਪ੍ਰੋਫਾਈਲ",
+    "profileInformation": "ਪ੍ਰੋਫਾਈਲ ਜਾਣਕਾਰੀ",
+    "updateProfile": "ਪ੍ਰੋਫਾਈਲ ਅਪਡੇਟ ਕਰੋ",
+    "name": "ਨਾਮ",
+    "email": "ਈਮੇਲ"
+  },
+  "list": {
+    "title": "ਸੂਚੀ",
+    "users": "ਯੂਜ਼ਰ",
+    "name": "ਨਾਮ",
+    "email": "ਈਮੇਲ",
+    "role": "ਭੂਮਿਕਾ",
+    "status": "ਸਥਿਤੀ",
+    "active": "ਸਰਗਰਮ",
+    "inactive": "ਨਿਸ਼ਕਿਰਿਆ",
+    "searchPlaceholder": "ਖੋਜ..."
+  },
+  "language": {
+    "switchLanguage": "ਭਾਸ਼ਾ ਬਦਲੋ",
+    "english": "ਅੰਗਰੇਜ਼ੀ",
+    "hindi": "ਹਿੰਦੀ",
+    "punjabi": "ਪੰਜਾਬੀ"
+  },
+  "errors": {
+    "somethingWentWrong": "ਕੁਝ ਗਲਤ ਹੋਇਆ",
+    "errorDescription": "ਇੱਕ ਅਪ੍ਰਤੱਖ ਗਲਤੀ ਆਈ। ਕਿਰਪਾ ਕਰਕੇ ਦੁਬਾਰਾ ਕੋਸ਼ਿਸ਼ ਕਰੋ ਜਾਂ ਪੰਨਾ ਮੁੜ ਲੋਡ ਕਰੋ।",
+    "undefinedError": "ਡੇਟਾ ਗਲਤੀ",
+    "undefinedErrorDescription": "ਕੁਝ ਡੇਟਾ ਗੁੰਮ ਜਾਂ ਪਰਿਭਾਸ਼ਿਤ ਨਹੀਂ ਹੈ। ਇਹ ਇੱਕ ਅਸਥਾਈ ਸਮੱਸਿਆ ਹੋ ਸਕਦੀ ਹੈ।",
+    "errorDetails": "ਗਲਤੀ ਵੇਰਵੇ",
+    "tryAgain": "ਦੁਬਾਰਾ ਕੋਸ਼ਿਸ਼ ਕਰੋ",
+    "reloadPage": "ਪੰਨਾ ਮੁੜ ਲੋਡ ਕਰੋ",
+    "moduleError": "{{module}} ਮੋਡੀਊਲ ਵਿੱਚ ਗਲਤੀ",
+    "moduleErrorDescription": "ਇਸ ਮੋਡੀਊਲ ਵਿੱਚ ਇੱਕ ਗਲਤੀ ਆਈ ਪਰ ਬਾਕੀ ਐਪਲੀਕੇਸ਼ਨ ਕੰਮ ਕਰਦੀ ਰਹੇਗੀ।",
+    "reloadModule": "ਮੋਡੀਊਲ ਮੁੜ ਲੋਡ ਕਰੋ",
+    "networkError": "ਨੈੱਟਵਰਕ ਗਲਤੀ",
+    "networkErrorDescription": "ਸਰਵਰ ਨਾਲ ਕਨੈਕਟ ਨਹੀਂ ਹੋ ਸਕਿਆ। ਕਿਰਪਾ ਕਰਕੇ ਆਪਣਾ ਇੰਟਰਨੈੱਟ ਕਨੈਕਸ਼ਨ ਜਾਂਚੋ।",
+    "dataError": "ਡੇਟਾ ਗਲਤੀ",
+    "dataErrorDescription": "ਡੇਟਾ ਲੋਡ ਨਹੀਂ ਹੋ ਸਕਿਆ। ਕੁਝ ਜਾਣਕਾਰੀ ਗੁੰਮ ਹੋ ਸਕਦੀ ਹੈ।",
+    "queryError": "ਡੇਟਾ ਲੋਡਿੰਗ ਗਲਤੀ",
+    "queryErrorDescription": "ਡੇਟਾ ਲੋਡ ਕਰਨ ਵਿੱਚ ਅਸਫਲ। ਕਿਰਪਾ ਕਰਕੇ ਦੁਬਾਰਾ ਕੋਸ਼ਿਸ਼ ਕਰੋ।",
+    "retry": "ਦੁਬਾਰਾ ਕੋਸ਼ਿਸ਼",
+    "componentError": "{{component}} ਕੰਪੋਨੈਂਟ ਵਿੱਚ ਗਲਤੀ",
+    "componentLoadError": "ਕੰਪੋਨੈਂਟ ਲੋਡ ਕਰਨ ਵਿੱਚ ਅਸਫਲ"
+  }
+}
