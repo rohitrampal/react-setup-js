@@ -1,8 +1,4 @@
-import {
-  Alert as MuiAlert,
-  AlertTitle,
-  IconButton,
-} from '@mui/material'
+import { Alert as MuiAlert, AlertTitle, IconButton } from '@mui/material'
 import { Close as CloseIcon } from '@mui/icons-material'
 import { classNames } from '@/utils/classNames'
 

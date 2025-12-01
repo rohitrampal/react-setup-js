@@ -1,4 +1,4 @@
-import { expect, afterEach, vi } from 'vitest'
+import { afterEach, vi } from 'vitest'
 import { cleanup } from '@testing-library/react'
 import '@testing-library/jest-dom'
 import { QueryClient } from '@tanstack/react-query'
@@ -24,7 +24,7 @@ Object.defineProperty(window, 'matchMedia', {
 })
 
 // Mock IntersectionObserver
-global.IntersectionObserver = class IntersectionObserver {
+globalThis.IntersectionObserver = class IntersectionObserver {
   constructor() {}
   disconnect() {}
   observe() {}
@@ -35,7 +35,7 @@ global.IntersectionObserver = class IntersectionObserver {
 }
 
 // Mock ResizeObserver
-global.ResizeObserver = class ResizeObserver {
+globalThis.ResizeObserver = class ResizeObserver {
   constructor() {}
   disconnect() {}
   observe() {}
@@ -59,7 +59,7 @@ export const createTestQueryClient = () =>
 // Mock i18n
 vi.mock('react-i18next', () => ({
   useTranslation: () => ({
-    t: (key) => key,
+    t: key => key,
     i18n: {
       changeLanguage: vi.fn(),
       language: 'en',
@@ -81,7 +81,6 @@ vi.mock('react-router-dom', async () => {
         {children}
       </a>
     ),
-    Navigate: ({ to }) => <div data-testid="navigate" data-to={to} />,
+    Navigate: ({ to }) => <div data-testid='navigate' data-to={to} />,
   }
 })
-

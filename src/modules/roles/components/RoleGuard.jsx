@@ -22,4 +22,3 @@ export const RoleGuard = ({ children, allowedRoles, fallback }) => {
 
   return <>{children}</>
 }
-

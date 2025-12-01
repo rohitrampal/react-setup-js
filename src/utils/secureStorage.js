@@ -1,14 +1,13 @@
 /**
  * Secure Storage Utility
- * 
+ *
  * Provides encryption/decryption for sensitive data
- * 
+ *
  * NOTE: For production, use proper encryption with server-side key management
  * This is a simplified version for development
  */
 
 class SecureStorage {
-
   // Synchronous methods for localStorage compatibility
   // Note: These use a simplified approach for sync operations
   encryptSync(text) {
@@ -46,7 +45,7 @@ class SecureStorage {
     try {
       const encrypted = localStorage.getItem(key)
       if (!encrypted) return null
-      
+
       const decrypted = this.decryptSync(encrypted)
       return JSON.parse(decrypted)
     } catch (error) {
@@ -65,4 +64,3 @@ class SecureStorage {
 }
 
 export const secureStorage = new SecureStorage()
-

@@ -95,11 +95,19 @@ const ErrorFallback = ({ error, onReset }) => {
           aria-hidden='true'
         />
 
-        <Typography variant='h5' component='h1' className='tw-mb-2 tw-font-bold tw-text-lg sm:tw-text-xl md:tw-text-2xl'>
+        <Typography
+          variant='h5'
+          component='h1'
+          className='tw-mb-2 tw-font-bold tw-text-lg sm:tw-text-xl md:tw-text-2xl'
+        >
           {isUndefinedError ? t('errors.undefinedError') : t('errors.somethingWentWrong')}
         </Typography>
 
-        <Typography variant='body2' color='textSecondary' className='tw-mb-4 tw-text-sm sm:tw-text-base'>
+        <Typography
+          variant='body2'
+          color='textSecondary'
+          className='tw-mb-4 tw-text-sm sm:tw-text-base'
+        >
           {isUndefinedError ? t('errors.undefinedErrorDescription') : t('errors.errorDescription')}
         </Typography>
 

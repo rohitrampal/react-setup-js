@@ -1,4 +1,4 @@
-export const lazyLoadScript = (src) => {
+export const lazyLoadScript = src => {
   return new Promise((resolve, reject) => {
     const script = document.createElement('script')
     script.src = src
@@ -9,7 +9,7 @@ export const lazyLoadScript = (src) => {
   })
 }
 
-export const lazyLoadStylesheet = (href) => {
+export const lazyLoadStylesheet = href => {
   return new Promise((resolve, reject) => {
     const link = document.createElement('link')
     link.rel = 'stylesheet'
@@ -20,7 +20,7 @@ export const lazyLoadStylesheet = (href) => {
   })
 }
 
-export const preloadRoute = (routePath) => {
+export const preloadRoute = routePath => {
   if ('requestIdleCallback' in window) {
     requestIdleCallback(() => {
       import(/* @vite-ignore */ routePath).catch(() => {
@@ -29,4 +29,3 @@ export const preloadRoute = (routePath) => {
     })
   }
 }
-

@@ -3,7 +3,7 @@ import { Box, CircularProgress } from '@mui/material'
 
 const Graph = lazy(() => import('./Graph').then(module => ({ default: module.Graph })))
 
-export const LazyGraph = (props) => {
+export const LazyGraph = props => {
   return (
     <Suspense
       fallback={
@@ -19,4 +19,3 @@ export const LazyGraph = (props) => {
     </Suspense>
   )
 }
-

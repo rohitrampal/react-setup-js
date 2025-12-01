@@ -3,7 +3,7 @@ import { Box, CircularProgress } from '@mui/material'
 
 const Calendar = lazy(() => import('./Calendar').then(module => ({ default: module.Calendar })))
 
-export const LazyCalendar = (props) => {
+export const LazyCalendar = props => {
   return (
     <Suspense
       fallback={
@@ -19,4 +19,3 @@ export const LazyCalendar = (props) => {
     </Suspense>
   )
 }
-

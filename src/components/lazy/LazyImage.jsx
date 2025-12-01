@@ -1,16 +1,7 @@
 import { useState, useRef, useEffect } from 'react'
 import { Box, Skeleton, Typography } from '@mui/material'
 
-export const LazyImage = ({
-  src,
-  alt,
-  className,
-  width,
-  height,
-  placeholder,
-  onLoad,
-  onError,
-}) => {
+export const LazyImage = ({ src, alt, className, width, height, placeholder, onLoad, onError }) => {
   const [isLoaded, setIsLoaded] = useState(false)
   const [isInView, setIsInView] = useState(false)
   const [hasError, setHasError] = useState(false)
@@ -92,4 +83,3 @@ export const LazyImage = ({
     </Box>
   )
 }
-

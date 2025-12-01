@@ -32,14 +32,18 @@ export const InfiniteListExample = () => {
 
   return (
     <Box>
-      <Typography variant='h5' component='h2' className='tw-mb-4 tw-text-lg sm:tw-text-xl md:tw-text-2xl'>
+      <Typography
+        variant='h5'
+        component='h2'
+        className='tw-mb-4 tw-text-lg sm:tw-text-xl md:tw-text-2xl'
+      >
         {t('list.users')} (Infinite Scroll)
       </Typography>
 
       <Table
         columns={columns}
-        rows={(allItems || [])}
-        getRowId={(row) => (row.id) || ''}
+        rows={allItems || []}
+        getRowId={row => row.id || ''}
         stickyHeader
         aria-label={t('list.users')}
       />

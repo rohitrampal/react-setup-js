@@ -58,7 +58,11 @@ export const DataList = () => {
     <ModuleErrorBoundary moduleName='List'>
       <Box aria-label={t('list.title')}>
         <Box className='tw-mb-4 tw-flex tw-flex-col sm:tw-flex-row tw-items-start sm:tw-items-center tw-justify-between tw-gap-4'>
-          <Typography variant='h5' component='h2' className='tw-text-lg sm:tw-text-xl md:tw-text-2xl'>
+          <Typography
+            variant='h5'
+            component='h2'
+            className='tw-text-lg sm:tw-text-xl md:tw-text-2xl'
+          >
             {t('list.users')}
           </Typography>
           <TextField
@@ -82,8 +86,8 @@ export const DataList = () => {
         <ComponentSuspense>
           <LazyTable
             columns={columns}
-            rows={(data || [])}
-            getRowId={(row) => (row.id) || ''}
+            rows={data || []}
+            getRowId={row => row.id || ''}
             stickyHeader
             aria-label={t('list.users')}
           />

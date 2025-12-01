@@ -50,4 +50,3 @@ export function useInfiniteScroll(options) {
     allItems,
   }
 }
-

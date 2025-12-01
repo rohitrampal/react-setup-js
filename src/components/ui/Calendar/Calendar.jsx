@@ -25,7 +25,7 @@ export const Calendar = ({
     setCurrentMonth(new Date(currentMonth.getFullYear(), currentMonth.getMonth() + 1))
   }
 
-  const handleDateClick = (date) => {
+  const handleDateClick = date => {
     if (minDate && date < minDate) return
     if (maxDate && date > maxDate) return
     onChange?.(date)
@@ -43,7 +43,11 @@ export const Calendar = ({
         <IconButton onClick={handlePreviousMonth} aria-label='Previous month' size='small'>
           <ChevronLeft />
         </IconButton>
-        <Typography variant='h6' component='h2' className='tw-text-sm sm:tw-text-base md:tw-text-lg'>
+        <Typography
+          variant='h6'
+          component='h2'
+          className='tw-text-sm sm:tw-text-base md:tw-text-lg'
+        >
           {format(currentMonth, 'MMMM yyyy')}
         </Typography>
         <IconButton onClick={handleNextMonth} aria-label='Next month' size='small'>
@@ -66,7 +70,7 @@ export const Calendar = ({
       </Box>
 
       <Box className='tw-grid tw-grid-cols-7 tw-gap-1'>
-        {daysInMonth.map((day) => {
+        {daysInMonth.map(day => {
           const isCurrentMonth = isSameMonth(day, currentMonth)
           const isSelected = value
             ? format(day, 'yyyy-MM-dd') === format(value, 'yyyy-MM-dd')
@@ -92,7 +96,7 @@ export const Calendar = ({
               aria-label={format(day, 'MMMM d, yyyy')}
               aria-selected={isSelected}
               tabIndex={isDisabled ? -1 : 0}
-              onKeyDown={(e) => {
+              onKeyDown={e => {
                 if (e.key === 'Enter' || e.key === ' ') {
                   e.preventDefault()
                   if (!isDisabled) handleDateClick(day)

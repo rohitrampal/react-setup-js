@@ -44,14 +44,18 @@ export const PaginatedListExample = () => {
 
   return (
     <Box>
-      <Typography variant='h5' component='h2' className='tw-mb-4 tw-text-lg sm:tw-text-xl md:tw-text-2xl'>
+      <Typography
+        variant='h5'
+        component='h2'
+        className='tw-mb-4 tw-text-lg sm:tw-text-xl md:tw-text-2xl'
+      >
         {t('list.users')} (Paginated)
       </Typography>
 
       <Table
         columns={columns}
-        rows={(data || [])}
-        getRowId={(row) => (row.id) || ''}
+        rows={data || []}
+        getRowId={row => row.id || ''}
         stickyHeader
         aria-label={t('list.users')}
       />

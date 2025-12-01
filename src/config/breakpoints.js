@@ -15,4 +15,3 @@ export const mediaQueries = {
   xl: `(min-width: ${breakpoints.xl})`,
   '2xl': `(min-width: ${breakpoints['2xl']})`,
 }
-

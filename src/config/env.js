@@ -7,4 +7,3 @@ export const env = {
   sentryDsn: import.meta.env.VITE_SENTRY_DSN,
   analyticsId: import.meta.env.VITE_ANALYTICS_ID,
 }
-

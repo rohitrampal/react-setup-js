@@ -37,4 +37,3 @@ export const ThemeWrapper = ({ children }) => {
     </ThemeProvider>
   )
 }
-

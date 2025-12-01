@@ -59,4 +59,3 @@ export class CacheManager {
 setInterval(() => {
   CacheManager.cleanup()
 }, 60000)
-

@@ -2,12 +2,7 @@ import { Box, Typography, Button } from '@mui/material'
 import { ErrorOutline, Refresh } from '@mui/icons-material'
 import { useTranslation } from 'react-i18next'
 
-export const QueryErrorFallback = ({
-  error,
-  refetch,
-  isLoading,
-  children,
-}) => {
+export const QueryErrorFallback = ({ error, refetch, isLoading, children }) => {
   const { t } = useTranslation()
 
   if (!error) {
@@ -29,16 +24,27 @@ export const QueryErrorFallback = ({
       aria-live='polite'
     >
       <Box className='tw-flex tw-items-start tw-gap-2 sm:tw-gap-3'>
-        <ErrorOutline className='tw-text-red-500 tw-mt-1 tw-flex-shrink-0' sx={{ fontSize: { xs: 20, sm: 24 } }} />
+        <ErrorOutline
+          className='tw-text-red-500 tw-mt-1 tw-flex-shrink-0'
+          sx={{ fontSize: { xs: 20, sm: 24 } }}
+        />
         <Box className='tw-flex-1 tw-min-w-0'>
-          <Typography variant='h6' component='h3' className='tw-mb-1 tw-text-red-800 tw-text-sm sm:tw-text-base'>
+          <Typography
+            variant='h6'
+            component='h3'
+            className='tw-mb-1 tw-text-red-800 tw-text-sm sm:tw-text-base'
+          >
             {isNetworkError
               ? t('errors.networkError')
               : isUndefinedError
                 ? t('errors.dataError')
                 : t('errors.queryError')}
           </Typography>
-          <Typography variant='body2' color='textSecondary' className='tw-mb-3 tw-text-xs sm:tw-text-sm'>
+          <Typography
+            variant='body2'
+            color='textSecondary'
+            className='tw-mb-3 tw-text-xs sm:tw-text-sm'
+          >
             {isNetworkError
               ? t('errors.networkErrorDescription')
               : isUndefinedError
@@ -73,10 +79,7 @@ export const QueryErrorFallback = ({
 }
 
 // eslint-disable-next-line react-refresh/only-export-components
-export const withQueryErrorFallback = (
-  queryResult,
-  fallback
-) => {
+export const withQueryErrorFallback = (queryResult, fallback) => {
   const { error, refetch, isLoading } = queryResult
 
   if (error) {

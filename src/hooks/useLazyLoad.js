@@ -32,11 +32,10 @@ export const useLazyLoad = (options = {}) => {
   return [ref, isIntersecting]
 }
 
-export const useLazyComponent = (options) => {
+export const useLazyComponent = options => {
   return useLazyLoad({
     rootMargin: '100px',
     threshold: 0.1,
     ...options,
   })
 }
-

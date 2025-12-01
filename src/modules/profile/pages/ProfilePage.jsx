@@ -10,7 +10,11 @@ export const ProfilePage = () => {
   }
 
   return (
-    <Container maxWidth='md' className='tw-py-4 md:tw-py-8 tw-px-2 sm:tw-px-4' aria-label='Profile page'>
+    <Container
+      maxWidth='md'
+      className='tw-py-4 md:tw-py-8 tw-px-2 sm:tw-px-4'
+      aria-label='Profile page'
+    >
       <ProfileForm />
     </Container>
   )

@@ -52,4 +52,3 @@ describe('classNames', () => {
     expect(classNames('foo', null, undefined, 'bar')).toBe('foo bar')
   })
 })
-

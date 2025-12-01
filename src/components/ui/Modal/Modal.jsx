@@ -43,7 +43,10 @@ export const Modal = ({
       {...props}
     >
       {title && (
-        <DialogTitle id={titleId} className='tw-flex tw-items-center tw-justify-between tw-pr-2 sm:tw-pr-4'>
+        <DialogTitle
+          id={titleId}
+          className='tw-flex tw-items-center tw-justify-between tw-pr-2 sm:tw-pr-4'
+        >
           <Typography variant='h6' component='span' className='tw-text-base sm:tw-text-lg'>
             {title}
           </Typography>
@@ -59,7 +62,11 @@ export const Modal = ({
           )}
         </DialogTitle>
       )}
-      <DialogContent id={descriptionId} className='tw-py-3 sm:tw-py-4 tw-px-3 sm:tw-px-6' aria-describedby={descriptionId}>
+      <DialogContent
+        id={descriptionId}
+        className='tw-py-3 sm:tw-py-4 tw-px-3 sm:tw-px-6'
+        aria-describedby={descriptionId}
+      >
         {children}
       </DialogContent>
       {actions && (

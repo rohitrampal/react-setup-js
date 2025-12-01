@@ -4,7 +4,7 @@ import { devtools } from 'zustand/middleware'
 
 /**
  * UI Store
- * 
+ *
  * Stores: UI preferences, theme, sidebar state, etc.
  * Safe to persist - no sensitive data
  */
@@ -14,62 +14,62 @@ export const useUIStore = create(
       (set, get) => ({
         // Theme
         theme: 'light',
-        
+
         // Sidebar
         sidebarOpen: true,
         sidebarCollapsed: false,
-        
+
         // Layout
         layout: 'default',
         compactMode: false,
-        
+
         // Notifications
         notificationsEnabled: true,
         notificationSound: true,
-        
+
         // Actions
-        setTheme: (theme) => {
+        setTheme: theme => {
           set({ theme })
           // Also update localStorage for MUI theme
           localStorage.setItem('theme_mode', theme)
         },
-        
+
         toggleTheme: () => {
           const { theme } = get()
           const newTheme = theme === 'light' ? 'dark' : 'light'
           set({ theme: newTheme })
           localStorage.setItem('theme_mode', newTheme)
         },
-        
-        setSidebarOpen: (open) => {
+
+        setSidebarOpen: open => {
           set({ sidebarOpen: open })
         },
-        
+
         toggleSidebar: () => {
           const { sidebarOpen } = get()
           set({ sidebarOpen: !sidebarOpen })
         },
-        
-        setSidebarCollapsed: (collapsed) => {
+
+        setSidebarCollapsed: collapsed => {
           set({ sidebarCollapsed: collapsed })
         },
-        
-        setLayout: (layout) => {
+
+        setLayout: layout => {
           set({ layout })
         },
-        
-        setCompactMode: (compact) => {
+
+        setCompactMode: compact => {
           set({ compactMode: compact })
         },
-        
-        setNotificationsEnabled: (enabled) => {
+
+        setNotificationsEnabled: enabled => {
           set({ notificationsEnabled: enabled })
         },
-        
-        setNotificationSound: (sound) => {
+
+        setNotificationSound: sound => {
           set({ notificationSound: sound })
         },
-        
+
         // Reset to defaults
         reset: () => {
           set({
@@ -91,4 +91,3 @@ export const useUIStore = create(
     { name: 'UIStore' }
   )
 )
-

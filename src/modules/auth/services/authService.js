@@ -1,7 +1,7 @@
 import { apiClient } from '@/services/api/client'
 
 export const authService = {
-  login: async (credentials) => {
+  login: async credentials => {
     const response = await apiClient.post('/auth/login', credentials, {
       skipAuth: true,
       skipCache: true,
@@ -10,7 +10,7 @@ export const authService = {
     return response.data
   },
 
-  register: async (data) => {
+  register: async data => {
     const response = await apiClient.post('/auth/register', data, {
       skipAuth: true,
       skipCache: true,
@@ -30,4 +30,3 @@ export const authService = {
     return response.data
   },
 }
-

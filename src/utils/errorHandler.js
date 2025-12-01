@@ -100,4 +100,3 @@ window.addEventListener('error', event => {
 window.addEventListener('unhandledrejection', event => {
   errorHandler.logError(new Error(event.reason?.message || 'Unhandled promise rejection'), {})
 })
-

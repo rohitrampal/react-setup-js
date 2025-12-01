@@ -1,5 +1,3 @@
-import { env } from '@/config/env'
-
 class ErrorTrackingService {
   constructor() {
     this.dsn = import.meta.env.VITE_SENTRY_DSN
@@ -10,6 +8,7 @@ class ErrorTrackingService {
 
   init() {
     if (!this.enabled || !this.dsn) {
+      // eslint-disable-next-line no-console
       console.log('Error tracking disabled or DSN not configured')
       return
     }
@@ -19,6 +18,7 @@ class ErrorTrackingService {
       // For now, we'll use a custom implementation
       // In production, you would initialize Sentry here:
       // Sentry.init({ dsn: this.dsn, environment: this.environment })
+      // eslint-disable-next-line no-console
       console.log('Error tracking initialized')
     }
   }
@@ -70,6 +70,7 @@ class ErrorTrackingService {
     this.sendToService(messageData)
 
     if (import.meta.env.DEV) {
+      // eslint-disable-next-line no-console
       console.log(`[${level.toUpperCase()}]`, messageData)
     }
   }
@@ -139,4 +140,3 @@ export const errorTracking = new ErrorTrackingService()
 if (typeof window !== 'undefined') {
   errorTracking.init()
 }
-

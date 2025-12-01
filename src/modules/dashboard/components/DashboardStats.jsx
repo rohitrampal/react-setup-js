@@ -8,10 +8,18 @@ const StatCard = ({ title, value, icon, trend, 'aria-label': ariaLabel }) => {
     <Card className='tw-h-full' aria-label={ariaLabel || `${title} statistic`}>
       <Box className='tw-flex tw-items-center tw-justify-between'>
         <Box className='tw-flex-1 tw-min-w-0'>
-          <Typography variant='body2' color='textSecondary' className='tw-mb-1 tw-text-xs sm:tw-text-sm'>
+          <Typography
+            variant='body2'
+            color='textSecondary'
+            className='tw-mb-1 tw-text-xs sm:tw-text-sm'
+          >
             {title}
           </Typography>
-          <Typography variant='h4' component='div' className='tw-font-bold tw-text-lg sm:tw-text-xl md:tw-text-2xl'>
+          <Typography
+            variant='h4'
+            component='div'
+            className='tw-font-bold tw-text-lg sm:tw-text-xl md:tw-text-2xl'
+          >
             {value}
           </Typography>
           {trend && (
@@ -20,9 +28,7 @@ const StatCard = ({ title, value, icon, trend, 'aria-label': ariaLabel }) => {
             </Typography>
           )}
         </Box>
-        <Box className='tw-text-primary-500 tw-flex-shrink-0 tw-ml-2'>
-          {icon}
-        </Box>
+        <Box className='tw-text-primary-500 tw-flex-shrink-0 tw-ml-2'>{icon}</Box>
       </Box>
     </Card>
   )

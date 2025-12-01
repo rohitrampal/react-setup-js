@@ -2,12 +2,7 @@ import { Box, Typography } from '@mui/material'
 import { ErrorOutline } from '@mui/icons-material'
 import { useTranslation } from 'react-i18next'
 
-export const ComponentErrorFallback = ({
-  componentName,
-  error,
-  children,
-  size = 'medium',
-}) => {
+export const ComponentErrorFallback = ({ componentName, error, children, size = 'medium' }) => {
   const { t } = useTranslation()
 
   const isUndefinedError =
@@ -35,7 +30,10 @@ export const ComponentErrorFallback = ({
               : t('errors.componentLoadError')}
         </Typography>
         {error?.message && (
-          <Typography variant='caption' className='tw-text-yellow-700 tw-mt-1 tw-block tw-break-words'>
+          <Typography
+            variant='caption'
+            className='tw-text-yellow-700 tw-mt-1 tw-block tw-break-words'
+          >
             {error.message}
           </Typography>
         )}
@@ -45,19 +43,13 @@ export const ComponentErrorFallback = ({
   )
 }
 
-export const SafeComponent = ({
-  children,
-  componentName,
-  fallback,
-}) => {
+export const SafeComponent = ({ children, componentName, fallback }) => {
   try {
     if (children === null || children === undefined) {
       return fallback || <ComponentErrorFallback componentName={componentName} size='small' />
     }
     return <>{children}</>
   } catch (error) {
-    return (
-      fallback || <ComponentErrorFallback componentName={componentName} error={error} />
-    )
+    return fallback || <ComponentErrorFallback componentName={componentName} error={error} />
   }
 }

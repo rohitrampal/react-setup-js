@@ -34,7 +34,7 @@ class ApiClient {
 
   setupInterceptors() {
     this.client.interceptors.request.use(
-      (config) => {
+      config => {
         const token = this.getAccessToken()
         if (token && !config.skipAuth) {
           config.headers.Authorization = `Bearer ${token}`
@@ -48,16 +48,16 @@ class ApiClient {
 
         return config
       },
-      (error) => {
+      error => {
         return Promise.reject(error)
       }
     )
 
     this.client.interceptors.response.use(
-      (response) => {
+      response => {
         return response
       },
-      async (error) => {
+      async error => {
         if (!axios.isAxiosError(error)) {
           return Promise.reject(this.formatError(error))
         }
@@ -163,10 +163,7 @@ class ApiClient {
 
     await rateLimiter.checkLimit(url)
 
-    const requestFn = () =>
-      this.client
-        .get(url, config)
-        .then((res) => res.data)
+    const requestFn = () => this.client.get(url, config).then(res => res.data)
 
     const key = requestDeduplication.generateKey('GET', url, config?.params)
     const data = config?.skipDeduplication
@@ -183,10 +180,7 @@ class ApiClient {
   async post(url, data, config) {
     await rateLimiter.checkLimit(url)
 
-    const requestFn = () =>
-      this.client
-        .post(url, data, config)
-        .then((res) => res.data)
+    const requestFn = () => this.client.post(url, data, config).then(res => res.data)
 
     const key = requestDeduplication.generateKey('POST', url, data)
     return config?.skipDeduplication
@@ -197,10 +191,7 @@ class ApiClient {
   async put(url, data, config) {
     await rateLimiter.checkLimit(url)
 
-    const requestFn = () =>
-      this.client
-        .put(url, data, config)
-        .then((res) => res.data)
+    const requestFn = () => this.client.put(url, data, config).then(res => res.data)
 
     const key = requestDeduplication.generateKey('PUT', url, data)
     return config?.skipDeduplication
@@ -211,10 +202,7 @@ class ApiClient {
   async patch(url, data, config) {
     await rateLimiter.checkLimit(url)
 
-    const requestFn = () =>
-      this.client
-        .patch(url, data, config)
-        .then((res) => res.data)
+    const requestFn = () => this.client.patch(url, data, config).then(res => res.data)
 
     const key = requestDeduplication.generateKey('PATCH', url, data)
     return config?.skipDeduplication
@@ -225,11 +213,8 @@ class ApiClient {
   async delete(url, config) {
     await rateLimiter.checkLimit(url)
 
-    return this.client
-      .delete(url, config)
-      .then((res) => res.data)
+    return this.client.delete(url, config).then(res => res.data)
   }
 }
 
 export const apiClient = new ApiClient()
-

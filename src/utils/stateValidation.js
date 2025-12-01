@@ -1,6 +1,6 @@
 /**
  * State Validation Utilities
- * 
+ *
  * Validates state data before storing/using
  * Prevents corrupted or malicious data
  */
@@ -51,21 +51,14 @@ export function validateUIPreferences(preferences) {
   }
 
   return {
-    theme: ['light', 'dark'].includes(preferences.theme) 
-      ? preferences.theme 
-      : 'light',
-    sidebarOpen: typeof preferences.sidebarOpen === 'boolean' 
-      ? preferences.sidebarOpen 
-      : true,
-    sidebarCollapsed: typeof preferences.sidebarCollapsed === 'boolean' 
-      ? preferences.sidebarCollapsed 
-      : false,
+    theme: ['light', 'dark'].includes(preferences.theme) ? preferences.theme : 'light',
+    sidebarOpen: typeof preferences.sidebarOpen === 'boolean' ? preferences.sidebarOpen : true,
+    sidebarCollapsed:
+      typeof preferences.sidebarCollapsed === 'boolean' ? preferences.sidebarCollapsed : false,
     layout: ['default', 'compact', 'wide'].includes(preferences.layout)
       ? preferences.layout
       : 'default',
-    compactMode: typeof preferences.compactMode === 'boolean'
-      ? preferences.compactMode
-      : false,
+    compactMode: typeof preferences.compactMode === 'boolean' ? preferences.compactMode : false,
   }
 }
 
@@ -94,18 +87,13 @@ export function validateAppSettings(settings) {
   }
 
   return {
-    language: typeof settings.language === 'string' 
-      ? settings.language 
-      : 'en',
-    timezone: typeof settings.timezone === 'string'
-      ? settings.timezone
-      : Intl.DateTimeFormat().resolvedOptions().timeZone,
-    dateFormat: typeof settings.dateFormat === 'string'
-      ? settings.dateFormat
-      : 'MM/DD/YYYY',
-    timeFormat: ['12h', '24h'].includes(settings.timeFormat)
-      ? settings.timeFormat
-      : '12h',
+    language: typeof settings.language === 'string' ? settings.language : 'en',
+    timezone:
+      typeof settings.timezone === 'string'
+        ? settings.timezone
+        : Intl.DateTimeFormat().resolvedOptions().timeZone,
+    dateFormat: typeof settings.dateFormat === 'string' ? settings.dateFormat : 'MM/DD/YYYY',
+    timeFormat: ['12h', '24h'].includes(settings.timeFormat) ? settings.timeFormat : '12h',
   }
 }
 
@@ -133,9 +121,5 @@ export function sanitizeString(input) {
   }
 
   // Remove potentially dangerous characters
-  return input
-    .trim()
-    .replace(/[<>]/g, '')
-    .slice(0, 1000) // Limit length
+  return input.trim().replace(/[<>]/g, '').slice(0, 1000) // Limit length
 }
-

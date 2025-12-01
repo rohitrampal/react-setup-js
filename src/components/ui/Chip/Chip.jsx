@@ -29,4 +29,3 @@ export const Chip = forwardRef(
 )
 
 Chip.displayName = 'Chip'
-

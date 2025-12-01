@@ -14,11 +14,11 @@ export const useRole = () => {
     return ROLE_PERMISSIONS[role]
   }, [role])
 
-  const hasPermission = (permission) => {
+  const hasPermission = permission => {
     return permissions[permission]
   }
 
-  const hasAnyRole = (roles) => {
+  const hasAnyRole = roles => {
     return roles.includes(role)
   }
 
@@ -34,4 +34,3 @@ export const useRole = () => {
     isAdmin: role === 'admin',
   }
 }
-

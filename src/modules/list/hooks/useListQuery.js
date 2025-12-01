@@ -5,11 +5,11 @@ import { apiClient } from '@/services/api/client'
 const LIST_KEYS = {
   all: ['list'],
   items: () => [...LIST_KEYS.all, 'items'],
-  item: (id) => [...LIST_KEYS.items(), id],
-  search: (term) => [...LIST_KEYS.items(), 'search', term],
+  item: id => [...LIST_KEYS.items(), id],
+  search: term => [...LIST_KEYS.items(), 'search', term],
 }
 
-export const useListItems = (searchTerm) => {
+export const useListItems = searchTerm => {
   return useQuery({
     queryKey: searchTerm ? LIST_KEYS.search(searchTerm) : LIST_KEYS.items(),
     queryFn: async () => {
@@ -94,4 +94,3 @@ export const useDeleteListItem = () => {
     },
   })
 }
-

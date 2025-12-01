@@ -11,9 +11,7 @@ export function Form({
   'aria-label': ariaLabel,
 }) {
   const methods = useForm({
-    resolver: validationSchema
-      ? yupResolver(validationSchema)
-      : undefined,
+    resolver: validationSchema ? yupResolver(validationSchema) : undefined,
     defaultValues: defaultValues,
   })
 
@@ -34,4 +32,3 @@ export function Form({
     </FormProvider>
   )
 }
-

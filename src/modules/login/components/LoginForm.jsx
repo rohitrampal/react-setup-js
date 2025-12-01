@@ -29,7 +29,7 @@ export const LoginForm = () => {
     resolver: yupResolver(loginSchema),
   })
 
-  const onSubmit = async (data) => {
+  const onSubmit = async data => {
     setError(null)
     setLoading(true)
 
@@ -54,7 +54,11 @@ export const LoginForm = () => {
       aria-label='Login form'
       noValidate
     >
-      <Typography variant='h4' component='h1' className='tw-mb-4 sm:tw-mb-6 tw-text-2xl sm:tw-text-3xl md:tw-text-4xl tw-text-center'>
+      <Typography
+        variant='h4'
+        component='h1'
+        className='tw-mb-4 sm:tw-mb-6 tw-text-2xl sm:tw-text-3xl md:tw-text-4xl tw-text-center'
+      >
         {t('auth.login')}
       </Typography>
 

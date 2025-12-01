@@ -1,5 +1,13 @@
-import { useState } from 'react'
-import { Drawer, List, ListItem, ListItemButton, ListItemIcon, ListItemText, useMediaQuery, useTheme as useMuiTheme } from '@mui/material'
+import {
+  Drawer,
+  List,
+  ListItem,
+  ListItemButton,
+  ListItemIcon,
+  ListItemText,
+  useMediaQuery,
+  useTheme as useMuiTheme,
+} from '@mui/material'
 import { Dashboard, List as ListIcon, Person } from '@mui/icons-material'
 import { useNavigate, useLocation } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
@@ -17,7 +25,7 @@ export const Navigation = ({ mobileOpen, onMobileClose }) => {
     { labelKey: 'navigation.profile', path: '/profile', icon: <Person /> },
   ]
 
-  const handleNavClick = (path) => {
+  const handleNavClick = path => {
     navigate(path)
     if (isMobile && onMobileClose) {
       onMobileClose()
@@ -25,7 +33,11 @@ export const Navigation = ({ mobileOpen, onMobileClose }) => {
   }
 
   const drawerContent = (
-    <List className={isMobile ? 'tw-mt-4' : 'tw-mt-16'} role='navigation' aria-label={t('navigation.dashboard')}>
+    <List
+      className={isMobile ? 'tw-mt-4' : 'tw-mt-16'}
+      role='navigation'
+      aria-label={t('navigation.dashboard')}
+    >
       {navItems.map(item => {
         const isActive = location.pathname === item.path
         return (

@@ -6,10 +6,10 @@ import { secureStorage } from '@/utils/secureStorage'
 
 /**
  * Auth Store
- * 
+ *
  * Stores: User profile data (non-sensitive)
  * Does NOT store: Tokens (kept in encrypted storage)
- * 
+ *
  * Security:
  * - User data is validated on load
  * - State is persisted securely
@@ -26,10 +26,10 @@ export const useAuthStore = create(
         lastLogin: null,
 
         // Actions
-        setUser: (userData) => {
+        setUser: userData => {
           // Validate user data before storing
           const validatedUser = validateUser(userData)
-          
+
           set({
             user: validatedUser,
             isAuthenticated: !!validatedUser,
@@ -37,16 +37,16 @@ export const useAuthStore = create(
           })
         },
 
-        setLoading: (loading) => {
+        setLoading: loading => {
           set({ isLoading: loading })
         },
 
-        login: async (userData) => {
+        login: async userData => {
           set({ isLoading: true })
-          
+
           try {
             const validatedUser = validateUser(userData)
-            
+
             set({
               user: validatedUser,
               isAuthenticated: true,
@@ -63,7 +63,7 @@ export const useAuthStore = create(
           // Clear tokens from secure storage
           secureStorage.removeItem('access_token')
           secureStorage.removeItem('refresh_token')
-          
+
           // Clear state
           set({
             user: null,
@@ -72,7 +72,7 @@ export const useAuthStore = create(
           })
         },
 
-        updateUser: (updates) => {
+        updateUser: updates => {
           const { user } = get()
           if (!user) return
 
@@ -86,12 +86,12 @@ export const useAuthStore = create(
           return user?.role || 'customer'
         },
 
-        hasRole: (role) => {
+        hasRole: role => {
           const { user } = get()
           return user?.role === role
         },
 
-        hasAnyRole: (roles) => {
+        hasAnyRole: roles => {
           const { user } = get()
           return roles.includes(user?.role)
         },
@@ -99,10 +99,10 @@ export const useAuthStore = create(
       {
         name: 'auth-storage',
         storage: createJSONStorage(() => ({
-          getItem: (name) => {
+          getItem: name => {
             const value = localStorage.getItem(name)
             if (!value) return null
-            
+
             try {
               // Decrypt and validate on load
               const decrypted = secureStorage.decrypt(value)
@@ -123,20 +123,22 @@ export const useAuthStore = create(
               console.error('Failed to encrypt auth storage:', error)
             }
           },
-          removeItem: (name) => {
+          removeItem: name => {
             localStorage.removeItem(name)
           },
         })),
         // Only persist non-sensitive data
-        partialize: (state) => ({
-          user: state.user ? {
-            id: state.user.id,
-            email: state.user.email,
-            name: state.user.name,
-            role: state.user.role,
-            // Add other non-sensitive fields
-            // Exclude: password, tokens, sensitive data
-          } : null,
+        partialize: state => ({
+          user: state.user
+            ? {
+                id: state.user.id,
+                email: state.user.email,
+                name: state.user.name,
+                role: state.user.role,
+                // Add other non-sensitive fields
+                // Exclude: password, tokens, sensitive data
+              }
+            : null,
           isAuthenticated: state.isAuthenticated,
           lastLogin: state.lastLogin,
         }),
@@ -145,4 +147,3 @@ export const useAuthStore = create(
     { name: 'AuthStore' }
   )
 )
-

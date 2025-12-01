@@ -38,11 +38,7 @@ export class SecurityUtils {
     }
   }
 
-  static rateLimitCheck(
-    key,
-    maxRequests,
-    windowMs
-  ) {
+  static rateLimitCheck(key, maxRequests, windowMs) {
     const storageKey = `rate_limit_${key}`
     const now = Date.now()
     const stored = localStorage.getItem(storageKey)
@@ -70,4 +66,3 @@ export class SecurityUtils {
     return { allowed: true, remaining: maxRequests - data.count }
   }
 }
-

@@ -13,7 +13,7 @@ export const LanguageSwitcher = () => {
   const { i18n, t } = useTranslation()
   const [anchorEl, setAnchorEl] = useState(null)
 
-  const handleClick = (event) => {
+  const handleClick = event => {
     setAnchorEl(event.currentTarget)
   }
 
@@ -21,7 +21,7 @@ export const LanguageSwitcher = () => {
     setAnchorEl(null)
   }
 
-  const handleLanguageChange = (languageCode) => {
+  const handleLanguageChange = languageCode => {
     i18n.changeLanguage(languageCode)
     handleClose()
   }
@@ -61,4 +61,3 @@ export const LanguageSwitcher = () => {
     </>
   )
 }
-

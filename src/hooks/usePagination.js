@@ -59,4 +59,3 @@ export function usePagination(options) {
     hasPreviousPage: page > 1,
   }
 }
-

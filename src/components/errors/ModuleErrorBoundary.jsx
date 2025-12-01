@@ -3,11 +3,7 @@ import { ErrorOutline, Refresh } from '@mui/icons-material'
 import { useTranslation } from 'react-i18next'
 import { ErrorBoundary } from './ErrorBoundary'
 
-const ModuleErrorFallback = ({
-  error,
-  moduleName,
-  onReset,
-}) => {
+const ModuleErrorFallback = ({ error, moduleName, onReset }) => {
   const { t } = useTranslation()
 
   return (
@@ -17,12 +13,23 @@ const ModuleErrorFallback = ({
       aria-live='polite'
     >
       <Box className='tw-flex tw-items-start tw-gap-2 sm:tw-gap-3'>
-        <ErrorOutline className='tw-text-red-500 tw-mt-1 tw-flex-shrink-0' sx={{ fontSize: { xs: 20, sm: 24 } }} />
+        <ErrorOutline
+          className='tw-text-red-500 tw-mt-1 tw-flex-shrink-0'
+          sx={{ fontSize: { xs: 20, sm: 24 } }}
+        />
         <Box className='tw-flex-1 tw-min-w-0'>
-          <Typography variant='h6' component='h3' className='tw-mb-1 tw-text-red-800 tw-text-sm sm:tw-text-base'>
+          <Typography
+            variant='h6'
+            component='h3'
+            className='tw-mb-1 tw-text-red-800 tw-text-sm sm:tw-text-base'
+          >
             {t('errors.moduleError', { module: moduleName })}
           </Typography>
-          <Typography variant='body2' color='textSecondary' className='tw-mb-3 tw-text-xs sm:tw-text-sm'>
+          <Typography
+            variant='body2'
+            color='textSecondary'
+            className='tw-mb-3 tw-text-xs sm:tw-text-sm'
+          >
             {t('errors.moduleErrorDescription')}
           </Typography>
           {error && (
@@ -51,11 +58,7 @@ const ModuleErrorFallback = ({
   )
 }
 
-export const ModuleErrorBoundary = ({
-  children,
-  moduleName,
-  onReset,
-}) => {
+export const ModuleErrorBoundary = ({ children, moduleName, onReset }) => {
   return (
     <ErrorBoundary
       onError={error => {

@@ -10,7 +10,7 @@ export const useAuth = () => {
   const logoutMutation = useLogout()
 
   const login = useCallback(
-    async (credentials) => {
+    async credentials => {
       await loginMutation.mutateAsync(credentials)
       navigate('/dashboard')
     },
@@ -18,7 +18,7 @@ export const useAuth = () => {
   )
 
   const register = useCallback(
-    async (data) => {
+    async data => {
       await registerMutation.mutateAsync(data)
       navigate('/dashboard')
     },
@@ -39,4 +39,3 @@ export const useAuth = () => {
     logout,
   }
 }
-

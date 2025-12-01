@@ -16,4 +16,3 @@ export function classNames(...classes) {
     .filter(Boolean)
     .join(' ')
 }
-

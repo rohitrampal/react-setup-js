@@ -23,8 +23,16 @@ export const DashboardPage = () => {
   ]
 
   return (
-    <Container maxWidth='xl' className='tw-py-4 md:tw-py-8 tw-px-2 sm:tw-px-4' aria-label={t('dashboard.title')}>
-      <Typography variant='h4' component='h1' className='tw-mb-4 md:tw-mb-6 tw-text-xl sm:tw-text-2xl md:tw-text-3xl'>
+    <Container
+      maxWidth='xl'
+      className='tw-py-4 md:tw-py-8 tw-px-2 sm:tw-px-4'
+      aria-label={t('dashboard.title')}
+    >
+      <Typography
+        variant='h4'
+        component='h1'
+        className='tw-mb-4 md:tw-mb-6 tw-text-xl sm:tw-text-2xl md:tw-text-3xl'
+      >
         {t('dashboard.title')}
       </Typography>
 

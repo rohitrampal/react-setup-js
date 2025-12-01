@@ -18,4 +18,3 @@ export function useApiQuery(options) {
     ...queryOptions,
   })
 }
-

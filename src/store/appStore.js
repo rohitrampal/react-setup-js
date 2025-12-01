@@ -4,7 +4,7 @@ import { devtools } from 'zustand/middleware'
 
 /**
  * App Store
- * 
+ *
  * Stores: App-wide settings, feature flags, etc.
  * Safe to persist - no sensitive data
  */
@@ -19,38 +19,38 @@ export const useAppStore = create(
           analytics: false,
           errorTracking: false,
         },
-        
+
         // App settings
         language: 'en',
         timezone: Intl.DateTimeFormat().resolvedOptions().timeZone,
         dateFormat: 'MM/DD/YYYY',
         timeFormat: '12h',
-        
+
         // Performance
         performanceMode: false,
         animationsEnabled: true,
-        
+
         // Actions
-        setLanguage: (language) => {
+        setLanguage: language => {
           set({ language })
           // Update i18n
           if (window.i18n) {
             window.i18n.changeLanguage(language)
           }
         },
-        
-        setTimezone: (timezone) => {
+
+        setTimezone: timezone => {
           set({ timezone })
         },
-        
-        setDateFormat: (format) => {
+
+        setDateFormat: format => {
           set({ dateFormat: format })
         },
-        
-        setTimeFormat: (format) => {
+
+        setTimeFormat: format => {
           set({ timeFormat: format })
         },
-        
+
         setFeature: (feature, enabled) => {
           const { features } = get()
           set({
@@ -60,15 +60,15 @@ export const useAppStore = create(
             },
           })
         },
-        
-        setPerformanceMode: (enabled) => {
+
+        setPerformanceMode: enabled => {
           set({ performanceMode: enabled })
         },
-        
-        setAnimationsEnabled: (enabled) => {
+
+        setAnimationsEnabled: enabled => {
           set({ animationsEnabled: enabled })
         },
-        
+
         // Reset to defaults
         reset: () => {
           set({
@@ -89,4 +89,3 @@ export const useAppStore = create(
     { name: 'AppStore' }
   )
 )
-

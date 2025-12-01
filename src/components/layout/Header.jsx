@@ -1,5 +1,16 @@
 import { useState } from 'react'
-import { AppBar, Toolbar, Typography, IconButton, Box, Button, useMediaQuery, useTheme as useMuiTheme, Menu, MenuItem } from '@mui/material'
+import {
+  AppBar,
+  Toolbar,
+  Typography,
+  IconButton,
+  Box,
+  Button,
+  useMediaQuery,
+  useTheme as useMuiTheme,
+  Menu,
+  MenuItem,
+} from '@mui/material'
 import { Brightness4, Brightness7, Logout, Person, Menu as MenuIcon } from '@mui/icons-material'
 import { useNavigate } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
@@ -21,7 +32,7 @@ export const Header = ({ onMenuClick }) => {
     setProfileMenuAnchor(null)
   }
 
-  const handleProfileMenuOpen = (event) => {
+  const handleProfileMenuOpen = event => {
     setProfileMenuAnchor(event.currentTarget)
   }
 
@@ -83,7 +94,12 @@ export const Header = ({ onMenuClick }) => {
                       'aria-labelledby': 'user-menu-button',
                     }}
                   >
-                    <MenuItem onClick={() => { navigate('/profile'); handleProfileMenuClose(); }}>
+                    <MenuItem
+                      onClick={() => {
+                        navigate('/profile')
+                        handleProfileMenuClose()
+                      }}
+                    >
                       <Person className='tw-mr-2' />
                       {user.name}
                     </MenuItem>

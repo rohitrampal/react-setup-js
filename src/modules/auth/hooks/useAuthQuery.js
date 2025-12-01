@@ -26,7 +26,7 @@ export const useLogin = () => {
   const queryClient = useQueryClient()
 
   return useMutation({
-    mutationFn: async (credentials) => {
+    mutationFn: async credentials => {
       const response = await apiClient.post('/auth/login', credentials, {
         skipAuth: true,
         skipCache: true,
@@ -47,7 +47,7 @@ export const useRegister = () => {
   const queryClient = useQueryClient()
 
   return useMutation({
-    mutationFn: async (data) => {
+    mutationFn: async data => {
       const response = await apiClient.post('/auth/register', data, {
         skipAuth: true,
         skipCache: true,
@@ -79,4 +79,3 @@ export const useLogout = () => {
     },
   })
 }
-

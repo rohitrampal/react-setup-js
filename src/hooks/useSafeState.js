@@ -4,7 +4,7 @@ import { errorHandler } from '@/utils/errorHandler'
 export function useSafeState(initialValue) {
   const [state, setState] = useState(initialValue)
 
-  const safeSetState = useCallback((value) => {
+  const safeSetState = useCallback(value => {
     try {
       setState(value)
     } catch (error) {
@@ -25,4 +25,3 @@ export function useSafeValue(value, fallback) {
   }
   return value
 }
-

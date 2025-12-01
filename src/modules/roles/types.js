@@ -55,4 +55,3 @@ export const ROLE_PERMISSIONS = {
     canManageUsers: true,
   },
 }
-

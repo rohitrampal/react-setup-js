@@ -108,13 +108,14 @@ export const Graph = ({
       aria-label={ariaLabel || `${type} chart`}
     >
       {title && (
-        <Box component='h3' className='tw-mb-3 sm:tw-mb-4 tw-text-base sm:tw-text-lg tw-font-semibold'>
+        <Box
+          component='h3'
+          className='tw-mb-3 sm:tw-mb-4 tw-text-base sm:tw-text-lg tw-font-semibold'
+        >
           {title}
         </Box>
       )}
-      <Box className='tw-overflow-x-auto'>
-        {renderChart()}
-      </Box>
+      <Box className='tw-overflow-x-auto'>{renderChart()}</Box>
     </Box>
   )
 }

@@ -39,7 +39,7 @@ export const ProfileForm = () => {
     }
   }, [user, reset])
 
-  const onSubmit = async (data) => {
+  const onSubmit = async data => {
     const sanitizedData = {
       name: SecurityUtils.sanitizeInput(data.name),
       email: SecurityUtils.sanitizeInput(data.email),
@@ -89,4 +89,3 @@ export const ProfileForm = () => {
     </Card>
   )
 }
-

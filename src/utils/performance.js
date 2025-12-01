@@ -1,5 +1,3 @@
-import { env } from '@/config/env'
-
 class PerformanceMonitor {
   constructor() {
     this.enabled = import.meta.env.VITE_ENABLE_PERFORMANCE_MONITORING === 'true' || true
@@ -72,6 +70,7 @@ class PerformanceMonitor {
 
     // Log in development
     if (import.meta.env.DEV) {
+      // eslint-disable-next-line no-console
       console.log(`[Performance] ${metricData.name}:`, metricData.value, metricData.rating)
     }
   }
@@ -115,7 +114,7 @@ class PerformanceMonitor {
     }
 
     try {
-      const observer = new PerformanceObserver((list) => {
+      const observer = new PerformanceObserver(list => {
         for (const entry of list.getEntries()) {
           if (entry.duration > 50) {
             // Task took longer than 50ms
@@ -176,7 +175,7 @@ class PerformanceMonitor {
     }
 
     try {
-      const observer = new PerformanceObserver((list) => {
+      const observer = new PerformanceObserver(list => {
         for (const entry of list.getEntries()) {
           if (entry.entryType === 'resource') {
             const resourceData = {
@@ -235,4 +234,3 @@ export const performanceMonitor = new PerformanceMonitor()
 if (typeof window !== 'undefined') {
   performanceMonitor.init()
 }
-

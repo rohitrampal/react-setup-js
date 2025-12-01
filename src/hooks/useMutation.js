@@ -1,7 +1,4 @@
-import {
-  useMutation,
-  useQueryClient,
-} from '@tanstack/react-query'
+import { useMutation, useQueryClient } from '@tanstack/react-query'
 import { apiClient } from '@/services/api/client'
 
 export function useApiMutation(options) {
@@ -15,7 +12,7 @@ export function useApiMutation(options) {
   } = options
 
   return useMutation({
-    mutationFn: async (variables) => {
+    mutationFn: async variables => {
       switch (method) {
         case 'POST':
           return await apiClient.post(endpoint, variables, {
@@ -74,4 +71,3 @@ export function useApiMutation(options) {
     ...mutationOptions,
   })
 }
-

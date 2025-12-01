@@ -92,7 +92,6 @@ export const darkTheme = createTheme({
   },
 })
 
-export const getTheme = (mode) => {
+export const getTheme = mode => {
   return mode === 'light' ? lightTheme : darkTheme
 }
-
